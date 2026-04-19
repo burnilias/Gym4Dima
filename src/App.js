@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './theme.css';
+import { ThemeProvider } from './ThemeContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1>Gym4Dima</h1>
+            <p>Your fitness journey starts here!</p>
+          </header>
+          <Routes>
+            <Route path="/" element={
+              <div>
+                <h2>Welcome to Gym4Dima</h2>
+                <p>This is the main page of your fitness application.</p>
+              </div>
+            } />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
