@@ -1,0 +1,73 @@
+.image-upload-page {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+}
+
+.page-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f0c14b;
+}
+
+.page-description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #aaa;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.upload-instructions {
+  margin-bottom: 30px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.upload-instructions h2 {
+  color: #ff9800;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.upload-instructions ol {
+  padding-left: 20px;
+}
+
+.upload-instructions li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.database-instructions {
+  margin-top: 40px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.database-instructions h2 {
+  color: #ff9800;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.database-instructions pre {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: monospace;
+  border: 1px solid #444;
+  margin-top: 15px;
+  white-space: pre-wrap;
+  color: #ddd;
+}

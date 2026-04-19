@@ -1,0 +1,105 @@
+.workout-container {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 90px; /* Adjust as needed for navbar height */
+}
+
+.workout-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Updated Page Title to match WorkoutDetail.css */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f0c14b; /* Accent color */
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  position: relative;
+}
+
+.page-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #f0c14b; /* Accent color */
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Removed .orange-line as it's incorporated into .page-title:after */
+
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* More responsive */
+  gap: 2rem;
+}
+
+.workout-card {
+  background-color: #2a2a2a; /* Consistent with other cards */
+  border-radius: 12px; /* Smoother radius */
+  overflow: hidden;
+  border: 1px solid #f0c14b; /* Accent color border */
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(240, 193, 75, 0.2);
+}
+
+/* Removed .workout-card-header as its utility was unclear and cluttered the card */
+
+.workout-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.workout-card-title {
+  padding: 1rem;
+  font-weight: 700; /* Slightly bolder */
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem; /* Increased font size */
+  color: #f0c14b; /* Accent color */
+  background-color: #333; /* Slight background for title area */
+  margin-top: auto; /* Pushes title to bottom if card content is sparse before it */
+}
+
+.workout-card-footer {
+  display: flex; /* Added to enable flexbox alignment */
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+}
+
+.arrow-left, .arrow-right {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .workout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .workout-grid {
+    grid-template-columns: 1fr;
+  }
+}

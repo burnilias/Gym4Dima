@@ -1,0 +1,95 @@
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10000;
+}
+
+.chatbot-toggle-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  outline: none;
+  position: relative;
+  z-index: 10001;
+}
+
+.chatbot-toggle-button:hover {
+  background-color: #e67e22;
+  transform: scale(1.1);
+}
+
+[id^="chat-widget"] {
+  position: fixed !important;
+  bottom: 100px !important;
+  right: 30px !important;
+  width: 350px !important;
+  height: 500px !important;
+  border: none !important;
+  z-index: 10000 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+[id^="chat-widget"] iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 15px !important;
+  position: relative !important;
+  z-index: 10000 !important;
+}
+
+.chat-widget-launcher {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  [id^="chat-widget"] {
+    width: 90% !important;
+    height: 70vh !important;
+    bottom: 100px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-wrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .chatbot-toggle-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  [id^="chat-widget"] {
+    width: 100% !important;
+    height: 80vh !important;
+    bottom: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    border-radius: 15px 15px 0 0 !important;
+  }
+}

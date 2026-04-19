@@ -1,0 +1,212 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo-gym {
+  color: #f0c14b;
+}
+
+.logo-dima {
+  color: #d13639;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+.navbar-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  filter: brightness(0) invert(1);
+}
+
+.discord {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/discord.svg');
+}
+
+.twitter {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitter.svg');
+}
+
+.twitch {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitch.svg');
+}
+
+.youtube {
+  background-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg');
+}
+
+/* Mobile menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger-menu div {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: white;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Add these styles to your existing Navbar.css */
+
+.error-popup {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0c14b;
+  color: #1a1a1a;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #333;
+  border-radius: 5px;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.profile-menu-item {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-menu-item:hover {
+  background-color: #444;
+}
+
+
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}

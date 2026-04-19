@@ -1,0 +1,695 @@
+/* Base styles */
+.meal-plan-container {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 90px;
+}
+
+.meal-plan-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f0c14b;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.meal-plan-step {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 1rem;
+}
+
+.meal-plan-step h2 {
+  color: #f0c14b;
+  margin-bottom: 1.5rem;
+}
+
+/* Input container adjustments */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.input-container input {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #f0c14b;
+  box-shadow: 0 0 0 2px rgba(240, 193, 75, 0.3);
+}
+
+.input-suffix {
+  margin-left: 0.5rem;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.input-hint {
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+/* Button styles */
+.next-button, .back-button, .generate-button, .restart-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: auto;
+}
+
+.next-button, .generate-button {
+  background-color: #f0c14b;
+  color: #1a1a1a;
+}
+
+.next-button:hover, .generate-button:hover {
+  background-color: #e0b13b;
+  transform: translateY(-2px);
+}
+
+.back-button {
+  background-color: #444;
+  color: white;
+  margin-right: 1rem;
+}
+
+.back-button:hover {
+  background-color: #555;
+}
+
+.restart-button {
+  background-color: #4b7a2a;
+  color: white;
+  margin-top: 2rem;
+}
+
+.restart-button:hover {
+  background-color: #3a651f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .meal-plan-content {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .meal-plan-step {
+    padding: 1rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-container input {
+    width: 100%;
+  }
+
+  .input-suffix {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .input-hint {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meal-plan-content {
+    padding: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .meal-plan-step {
+    padding: 0.8rem;
+  }
+
+  .input-container input {
+    font-size: 0.9rem;
+  }
+
+  .input-hint {
+    font-size: 0.7rem;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.goal-options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.goal-option {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.goal-option.selected {
+  background-color: #4b7a2a;
+  border: 2px solid #f0c14b;
+}
+
+.meal-plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.meal-plan-header h2 {
+  text-align: center;
+  margin: 0;
+  color: #f0c14b;
+}
+
+.print-button {
+  background: none;
+  border: none;
+  color: #f0c14b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: opacity 0.3s;
+}
+
+.print-button:hover {
+  opacity: 0.8;
+}
+
+.goal-option h3 {
+  margin-bottom: 0.5rem;
+}
+
+.goal-option p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.meals-selector {
+  margin: 2rem 0;
+}
+
+.meals-selector label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.meals-selector select {
+  padding: 0.8rem 1.5rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.meals-selector select:focus {
+  outline: none;
+  border-color: #f0c14b;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  position: relative;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.loading-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+}
+
+.loading-spinner:before,
+.loading-spinner:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.loading-spinner:before {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f0c14b, #e0b13b);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-spinner:after {
+  width: 80%;
+  height: 80%;
+  background-color: #222;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.85); opacity: 1; }
+  50% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(0.85); opacity: 1; }
+}
+
+/* Switch Toggle (Dark/Light style for Moroccan mode) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid #444;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #333;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0;
+  top: 0;
+  background: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 1.5rem;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+}
+
+input:checked + .slider {
+  background: linear-gradient(90deg, #d32f2f 60%, #ffd600 100%);
+  box-shadow: 0 0 10px #ffd600;
+}
+
+input:checked + .slider:before {
+  transform: translateX(40px);
+  background: linear-gradient(90deg, #d32f2f 60%, #ffd600 100%);
+  color: white;
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.switch-label {
+  position: absolute;
+  top: 7px;
+  font-size: 1.2rem;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.switch-label.left {
+  left: 10px;
+  color: #222;
+}
+
+.switch-label.right {
+  right: 10px;
+  color: #d32f2f;
+}
+
+input:checked + .slider .switch-label.left {
+  color: #fff;
+}
+
+input:checked + .slider .switch-label.right {
+  color: #fff;
+}
+
+/* Moroccan Mode Styles */
+.moroccan-mode .meal-plan-header h2,
+.moroccan-mode .meal-card,
+.moroccan-mode .meal-card * {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Override ONLY font and direction for Moroccan mode, but keep all other .meal-card styles the same */
+.moroccan-mode .meal-card {
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.moroccan-mode .meal-name {
+  font-size: 1.4rem;
+  color: #f0c14b;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.moroccan-mode .meal-description {
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.moroccan-mode .ingredients-list h5,
+.moroccan-mode .ingredients-list ul li {
+  color: #aaa;
+}
+
+
+/* Ensure toggle and print buttons align nicely */
+.meal-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+.loading-container p {
+  color: #f0c14b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.meal-plan-result {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.meal-plan-summary {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-label {
+  display: block;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f0c14b;
+}
+
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.meal-card {
+  background-color: #333;
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+}
+
+.meal-header h3 {
+  margin: 0;
+  color: #f0c14b;
+}
+
+.meal-calories {
+  background-color: #4b7a2a;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.meal-name {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.meal-description {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .goal-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .goal-option {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .meal-plan-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .back-button {
+    margin-right: 0;
+  }
+}
+
+.ingredients-list {
+  margin-top: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.ingredients-list h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #f0c14b;
+  font-size: 1rem;
+}
+
+.ingredients-list ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.ingredients-list li {
+  margin-bottom: 0.3rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .meal-plan-container {
+    background-color: white !important;
+    color: black !important;
+    padding-top: 0 !important;
+  }
+  
+  .navbar, 
+  .page-title,
+  .print-button,
+  .restart-button {
+    display: none !important;
+  }
+  
+  .meal-plan-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .meal-plan-result {
+    background-color: white !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .meal-plan-header h2 {
+    color: black !important;
+    text-align: center !important;
+    font-size: 24px !important;
+    margin: 20px 0 !important;
+  }
+  
+  .meal-plan-summary {
+    border: 1px solid #ddd !important;
+    background-color: #f5f5f5 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .summary-label {
+    color: #333 !important;
+  }
+  
+  .summary-value {
+    color: #333 !important;
+  }
+  
+  .meals-container {
+    display: block !important;
+  }
+  
+  .meal-card {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .meal-header {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+  
+  .meal-header h3 {
+    color: #333 !important;
+  }
+  
+  .meal-calories {
+    background-color: #4b7a2a !important;
+    color: white !important;
+  }
+  
+  .meal-name {
+    color: #333 !important;
+    font-weight: bold !important;
+  }
+  
+  .meal-description {
+    color: #333 !important;
+  }
+  
+  .ingredients-list {
+    background-color: #f9f9f9 !important;
+    border: 1px solid #eee !important;
+  }
+  
+  .ingredients-list h5 {
+    color: #333 !important;
+  }
+  
+  .ingredients-list ul li {
+    color: #333 !important;
+  }
+}

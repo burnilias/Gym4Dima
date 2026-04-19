@@ -1,0 +1,132 @@
+.login-container {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 90px; /* Adjust as needed for navbar height */
+}
+
+.login-content {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.login-form-container {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-title {
+  color: #f0c14b;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: #f0c14b;
+}
+
+.login-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background-color: #f57c00;
+}
+
+.register-link, .forgot-password-link {
+  margin-top: 1.5rem;
+}
+
+/* Add this to your existing Login.css file */
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.register-link a, .forgot-password-link a {
+  color: #3498db;
+  text-decoration: none;
+  position: relative;
+}
+
+.register-link a::after, .forgot-password-link a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3498db;
+}
+
+.success-message {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.back-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.back-button:hover {
+  background-color: #444;
+}
+
+.motivational-quote {
+  margin-top: 3rem;
+  font-style: italic;
+  color: #aaa;
+  text-align: center;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('https://images.ctfassets.net/8urtyqugdt2l/6zNIqMK3E7ycZzHoRP7gR6/5df7759d592e54769654120f32865ed4/desktop-unilateral-back-exercises.jpg');
+  background-size: cover;
+  background-position: center;
+}
