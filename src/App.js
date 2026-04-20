@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
@@ -21,27 +21,7 @@ import './theme.css';
 import Chatbot from './components/Chatbot.jsx';
 import { ThemeProvider } from './ThemeContext';
 
-import { supabase } from './supabaseClient';
-
-// Create a UserContext to provide user state throughout the app
-export const UserContext = createContext(null);
-
 function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // Check for existing session on mount
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-    });
-    // Listen for auth state changes
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, []);
 
   return (
     <ThemeProvider>
