@@ -1,18 +1,10 @@
 {
-  "name": "onlyfront",
-  "version": "0.1.0",
+  "name": "gym4dima",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@supabase/auth-js": "^2.69.1",
     "@supabase/supabase-js": "^2.49.7",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bcryptjs": "^3.0.2",
-    "cookie": "^1.0.2",
-    "jsonwebtoken": "^9.0.2",
-    "next": "^15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
@@ -23,10 +15,11 @@
   },
   "scripts": {
     "start": "set PORT=3003 && set BROWSER=none && react-scripts start",
-    "build": "ESLINT_NO_DEV_ERRORS=true DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build": "set GENERATE_SOURCEMAP=false&& set ESLINT_NO_DEV_ERRORS=true&& set DISABLE_ESLINT_PLUGIN=true&& set CI=false&& react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": ".",
   "browserslist": {
     "production": [
       ">0.2%",
