@@ -120,7 +120,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #f39c12;
+  background: #444;
   color: white;
   display: flex;
   align-items: center;
@@ -198,8 +198,20 @@
 }
 
 .like-button {
-  color: #f39c12;
-  transition: color 0.2s;
+  color: #fff;
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .like-button.liked {
@@ -228,7 +240,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #f39c12;
+  background: #444;
   color: white;
   display: flex;
   align-items: center;
@@ -496,10 +508,11 @@
 }
 
 .message.sent {
-  background-color: #f0c14b; /* Changed to accent color */
-  color: #1a1a1a; /* Dark text on accent background */
+  background-color: #444;
+  color: #fff;
   margin-left: auto;
   border-bottom-right-radius: 5px;
+  border: 1px solid #f39c12;
 }
 
 .message.received {
@@ -521,7 +534,7 @@
 }
 
 .message.sent .timestamp {
-  color: #555; /* Darker timestamp on light accent */
+  color: #888;
 }
 
 .message-input-area {
@@ -659,7 +672,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #f39c12;
+  background: #444;
   color: white;
   display: flex;
   align-items: center;
@@ -761,7 +774,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #f39c12;
+  background: #444;
   color: white;
   display: flex;
   align-items: center;

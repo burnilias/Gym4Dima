@@ -49,6 +49,160 @@ body {
   }
 }
 
+/* Dark Theme - Hard-coded */
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #222222;
+  --bg-tertiary: #2c2c2c;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #888888;
+  --card-bg: #2c2c2c;
+  --card-border: #444444;
+  --navbar-bg: #222222;
+  --navbar-text: #ffffff;
+  --accent-color: #f39c12;
+  --accent-hover: #e08e0b;
+  --button-bg: #f39c12;
+  --button-text: #1a1a1a;
+  --button-hover: #e08e0b;
+  --input-bg: #333333;
+  --input-border: #555555;
+  --input-text: #ffffff;
+  --input-placeholder: #888888;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.3);
+  --border-color: #444444;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --warning-color: #ffc107;
+}
+
+/* Apply dark theme to body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a {
+  color: var(--navbar-text);
+}
+
+/* Cards */
+.card, .coach-card, .post-item, .note-item, .meal-card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Buttons */
+button, .btn, .login-button, .register-button, .update-profile-button,
+.calculate-button, .next-button, .back-button, .generate-button, .restart-button,
+.create-post-button, .post-button, .comment-button, .coach-whatsapp-button,
+.coach-bio-button, .edit-note-button, .delete-note-button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, .btn:hover, .login-button:hover, .register-button:hover,
+.update-profile-button:hover, .calculate-button:hover, .next-button:hover,
+.back-button:hover, .generate-button:hover, .restart-button:hover,
+.create-post-button:hover, .post-button:hover, .comment-button:hover,
+.coach-whatsapp-button:hover, .coach-bio-button:hover, .edit-note-button:hover,
+.delete-note-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--input-text);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-color);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Form containers */
+.login-form-container, .register-form-container, .profile-form-container,
+.calculator-form-container, .meal-plan-step, .create-post-section {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headers and titles */
+h1, h2, h3, h4, h5, h6, .page-title, .login-title, .register-title,
+.profile-title, .coach-page-title, .community-chat-main-title,
+.note-page-main-title {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* Accent text elements */
+.logo-gym, .logo-dima, .coach-name, .post-username, .comment-username,
+.note-item h3, .create-post-section h2, .your-notes-section h2 {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+/* Secondary text */
+.subtitle, .community-chat-subtitle, .post-timestamp, .coach-specialization,
+.note-item small, .no-posts-message, .no-notes-message {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Error and success messages */
+.error-message, .error-popup {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.verification-message {
+  background-color: var(--success-color);
+  color: white;
+}
+
+/* Shadows */
+.card, .coach-card, .post-item, .note-item, .meal-card, .login-form-container,
+.register-form-container, .profile-form-container, .calculator-form-container {
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover, .coach-card:hover, .post-item:hover, .note-item:hover,
+.meal-card:hover {
+  box-shadow: 0 4px 20px var(--shadow-hover);
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   body {

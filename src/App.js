@@ -17,15 +17,12 @@ import CommunityChatPage from './pages/CommunityChatPage.jsx';
 import ImageUploadPage from './pages/ImageUploadPage.jsx'; // Import for image upload page
 import ProtectedRoute from './components/ProtectedRoute.jsx'; // Import for protected routes
 import './App.css';
-import './theme.css';
 import Chatbot from './components/Chatbot.jsx';
-import { ThemeProvider } from './ThemeContext';
 
 function App() {
 
   return (
-    <ThemeProvider>
-      <Router>
+    <Router>
       <Chatbot />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -47,7 +44,6 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
-    </ThemeProvider>
   );
 }
 

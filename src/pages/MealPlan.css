@@ -477,14 +477,15 @@
 }
 
 input:checked + .slider {
-  background: linear-gradient(90deg, #d32f2f 60%, #ffd600 100%);
-  box-shadow: 0 0 10px #ffd600;
+  background: #333;
+  border: 2px solid #f0c14b;
+  box-shadow: 0 0 10px rgba(240, 193, 75, 0.3);
 }
 
 input:checked + .slider:before {
   transform: translateX(40px);
-  background: linear-gradient(90deg, #d32f2f 60%, #ffd600 100%);
-  color: white;
+  background: #f0c14b;
+  color: #1a1a1a;
 }
 
 .slider.round {

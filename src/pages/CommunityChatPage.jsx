@@ -54,8 +54,16 @@ const [error, setError] = useState('');
     };
     fetchPosts();
     const postSubscription = supabase
-      .channel('realtime:public:posts')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'posts' }, fetchPosts)
+      .channel('publications-changes')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload) => {
+        setPosts(prev => {
+          // Dedupe: check if post already exists
+          if (prev.some(post => post.id === payload.new.id)) {
+            return prev;
+          }
+          return [payload.new, ...prev];
+        });
+      })
       .subscribe();
     return () => {
       supabase.removeChannel(postSubscription);
@@ -69,8 +77,19 @@ const [error, setError] = useState('');
     };
     fetchLikes();
     const likeSubscription = supabase
-      .channel('realtime:public:likes')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'likes' }, fetchLikes)
+      .channel('likes-changes')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'likes' }, (payload) => {
+        setLikes(prev => {
+          // Dedupe: check if like already exists
+          if (prev.some(like => like.id === payload.new.id)) {
+            return prev;
+          }
+          return [...prev, payload.new];
+        });
+      })
+      .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'likes' }, (payload) => {
+        setLikes(prev => prev.filter(like => like.id !== payload.old.id));
+      })
       .subscribe();
     return () => {
       supabase.removeChannel(likeSubscription);
@@ -91,8 +110,21 @@ const [error, setError] = useState('');
     };
     fetchComments();
     const commentSubscription = supabase
-      .channel('realtime:public:comments')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'comments' }, fetchComments)
+      .channel('comments-changes')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'comments' }, (payload) => {
+        setComments(prev => {
+          const postId = payload.new.post_id;
+          // Dedupe: check if comment already exists in this post's comments
+          const existingComments = prev[postId] || [];
+          if (existingComments.some(comment => comment.id === payload.new.id)) {
+            return prev;
+          }
+          return {
+            ...prev,
+            [postId]: [...existingComments, payload.new]
+          };
+        });
+      })
       .subscribe();
     return () => {
       supabase.removeChannel(commentSubscription);
@@ -290,9 +322,8 @@ const [error, setError] = useState('');
                   onClick={() => handleLike(post.id)}
                   aria-label={userLiked ? 'Unlike' : 'Like'}
                 >
-                  <span style={{fontSize: '1.3rem', marginRight: 6}}>{userLiked ? '❤️' : '🤍'}</span>
-                  <span style={{fontWeight: 'bold', color: '#f0c14b'}}>{postLikes.length}</span>
-                  <span style={{marginLeft: 6}}>{userLiked ? 'Liked' : 'Like'}</span>
+                  <span style={{fontSize: '1.2rem', marginRight: 4}}>{userLiked ? '❤️' : '🤍'}</span>
+                  <span style={{fontWeight: 'bold'}}>{postLikes.length}</span>
                 </button>
               </div>
               <div className="comments-section">

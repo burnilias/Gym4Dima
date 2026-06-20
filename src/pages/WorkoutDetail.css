@@ -60,8 +60,9 @@
 }
 
 .filter-option.active {
-  background-color: #f0c14b;
-  color: #1a1a1a;
+  background-color: #3a3a3a;
+  color: #f0c14b;
+  border: 2px solid #f0c14b;
   box-shadow: 0 4px 10px rgba(240, 193, 75, 0.4);
 }
 
@@ -313,11 +314,12 @@
 }
 
 .step-number {
-  background-color: #f0c14b;
-  color: #1a1a1a;
+  background-color: #333;
+  color: #f0c14b;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 2px solid #f0c14b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -408,8 +410,9 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #f0c14b;
-  color: #1a1a1a;
+  background-color: #333;
+  color: #f0c14b;
+  border: 1px solid #f0c14b;
   padding: 3px 8px;
   border-radius: 3px;
   font-size: 0.8rem;

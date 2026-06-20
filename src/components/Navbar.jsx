@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import { useTheme } from '../ThemeContext';
 
 const Navbar = ({ showProfile = false }) => {
-  const { theme, toggleTheme } = useTheme();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -68,6 +66,32 @@ const Navbar = ({ showProfile = false }) => {
       navigate('/');
     }
   };
+
+  const handleMobileMenuToggle = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
+  const handleMobileLinkClick = (e, path) => {
+    handleNavLinkClick(e, path);
+    setShowMobileMenu(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navbar = document.querySelector('.navbar');
+      if (showMobileMenu && navbar && !navbar.contains(event.target)) {
+        setShowMobileMenu(false);
+      }
+    };
+
+    if (showMobileMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showMobileMenu]);
   
   return (
     <nav className="navbar">
@@ -92,20 +116,6 @@ const Navbar = ({ showProfile = false }) => {
           <a href="#" className="social-icon twitch"></a>
           <a href="#" className="social-icon youtube"></a>
         </div>
-        <button
-          className="theme-toggle-btn"
-          onClick={toggleTheme}
-          aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            fontSize: '1.5rem',
-            marginRight: '1rem'
-          }}
-        >
-          {theme === 'light' ? '🌙' : '☀️'}
-        </button>
         {showProfile && (
           <div className="profile-container">
             <button 
@@ -136,7 +146,7 @@ const Navbar = ({ showProfile = false }) => {
       )}
 
       {/* Mobile menu button */}
-      <div className="hamburger-menu" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+      <div className={`hamburger-menu ${showMobileMenu ? 'active' : ''}`} onClick={handleMobileMenuToggle}>
         <div></div>
         <div></div>
         <div></div>
@@ -144,12 +154,18 @@ const Navbar = ({ showProfile = false }) => {
 
       {/* Mobile menu */}
       <div className={`mobile-menu ${showMobileMenu ? 'active' : ''}`}>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/calorie-calculator')}>calorie calculator</a>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/workout')}>workout</a>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/coach')}>coach</a>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/meal-plan')}>meal plan</a>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/note')}>note</a>
-        <a href="#" onClick={(e) => handleNavLinkClick(e, '/community-chat')}>Community Chat</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/calorie-calculator')}>calorie calculator</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/workout')}>workout</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/coach')}>coach</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/meal-plan')}>meal plan</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/note')}>note</a>
+        <a href="#" onClick={(e) => handleMobileLinkClick(e, '/community-chat')}>Community Chat</a>
+        <div className="mobile-menu-social">
+          <a href="#" className="social-icon discord"></a>
+          <a href="#" className="social-icon twitter"></a>
+          <a href="#" className="social-icon twitch"></a>
+          <a href="#" className="social-icon youtube"></a>
+        </div>
       </div>
     </nav>
   );

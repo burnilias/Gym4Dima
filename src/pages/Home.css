@@ -9,7 +9,7 @@
 
 
 .hero-section {
-  min-height: calc(100vh - 80px);
+  min-height: 85vh;
   background-image: url('https://img.freepik.com/free-photo/3d-rendering-modern-loft-gym-fitness_105762-2020.jpg?semt=ais_hybrid&w=740');
   background-size: cover;
   background-position: center;
@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
 }
 
 .hero-content {
@@ -37,41 +37,69 @@
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   color: #f0c14b;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
-}
-
-.cta-card {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .cta-text {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 .join-button {
   display: inline-block;
   background-color: #ff9800;
   color: white;
-  padding: 0.8rem 2rem;
+  padding: 1rem 3rem;
   border-radius: 2rem;
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
 }
 
 .join-button:hover {
-  background-color: #f57c00;
+  transform: scale(1.05);
+  background-color: #ffa726;
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+}
+
+.hero-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-animate:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero-animate:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.hero-animate:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Features Section */
@@ -80,6 +108,64 @@
   max-width: 1200px;
   margin: 0 auto 60px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 152, 0, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle 2px at 20px 20px,
+      rgba(255, 152, 0, 0.1) 0%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle 2px at 40px 60px,
+      rgba(240, 193, 75, 0.08) 0%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle 2px at 80px 30px,
+      rgba(255, 152, 0, 0.1) 0%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle 2px at 120px 80px,
+      rgba(240, 193, 75, 0.08) 0%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle 2px at 160px 40px,
+      rgba(255, 152, 0, 0.1) 0%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle 2px at 200px 90px,
+      rgba(240, 193, 75, 0.08) 0%,
+      transparent 0%
+    );
+  background-size: 
+    100% 100%,
+    220px 120px,
+    220px 120px,
+    220px 120px,
+    220px 120px,
+    220px 120px,
+    220px 120px;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.3s ease-out;
 }
 
 .section-title {
@@ -107,6 +193,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card {
@@ -115,6 +203,36 @@
   padding: 30px 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
 }
 
 .feature-card:hover {
@@ -122,9 +240,26 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.feature-card:hover::before {
+  transform: scale(1.05);
+}
+
+.feature-card-workout::before {
+  background-image: url('https://summitfitnesssolutions.com/wp-content/uploads/2021/03/19-07-Blog-fitness-training-personal-training.png');
+}
+
+.feature-card-nutrition::before {
+  background-image: url('https://img.freepik.com/free-photo/healthy-food-clean-eating-selection_1303-24764.jpg?semt=ais_hybrid&w=740');
+}
+
+.feature-card-coaching::before {
+  background-image: url('https://urskalecinski.com/cdn/shop/articles/Coach_im_Bodybuilding_eb99bb35-319c-4b87-98cb-ef14c2561994.jpg?v=1753000109');
+}
+
+.feature-card h3,
+.feature-card p {
+  position: relative;
+  z-index: 2;
 }
 
 .feature-card h3 {
@@ -155,17 +290,15 @@
   position: relative;
 }
 
-.testimonial-avatar {
-  font-size: 3rem;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #333;
+.testimonial-rating {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  border: 3px solid #f0c14b;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.star-filled {
+  color: #f0c14b;
 }
 
 .testimonial-text {
@@ -198,5 +331,46 @@
   
   .section-title {
     font-size: 2rem;
+  }
+
+  .features-section::before {
+    background: 
+      radial-gradient(
+        circle 2px at 20px 20px,
+        rgba(255, 152, 0, 0.1) 0%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle 2px at 40px 60px,
+        rgba(240, 193, 75, 0.08) 0%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle 2px at 80px 30px,
+        rgba(255, 152, 0, 0.1) 0%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle 2px at 120px 80px,
+        rgba(240, 193, 75, 0.08) 0%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle 2px at 160px 40px,
+        rgba(255, 152, 0, 0.1) 0%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle 2px at 200px 90px,
+        rgba(240, 193, 75, 0.08) 0%,
+        transparent 0%
+      );
+    background-size: 
+      220px 120px,
+      220px 120px,
+      220px 120px,
+      220px 120px,
+      220px 120px,
+      220px 120px;
   }
 }

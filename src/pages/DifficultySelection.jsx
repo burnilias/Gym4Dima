@@ -12,22 +12,22 @@ const DifficultySelection = () => {
       id: 'calorie-calculator',
       title: 'CALORIE CALCULATOR',
       description: 'Calculate your daily calorie needs based on your goals, activity level, and body metrics.',
-      icon: '🔢',
-      path: '/calorie-calculator'
+      path: '/calorie-calculator',
+      className: 'difficulty-card-calculator'
     },
     {
       id: 'workout',
       title: 'WORKOUT PLANS',
       description: 'Access customized workout routines for different body parts and fitness levels.',
-      icon: '💪',
-      path: '/workout'
+      path: '/workout',
+      className: 'difficulty-card-workout'
     },
     {
       id: 'meal-plan',
       title: 'MEAL PLANS',
       description: 'Discover healthy meal plans tailored to your calorie needs and dietary preferences.',
-      icon: '🥗',
-      path: '/meal-plan'
+      path: '/meal-plan',
+      className: 'difficulty-card-meal'
     }
   ];
 
@@ -47,8 +47,7 @@ const DifficultySelection = () => {
         
         <div className="difficulty-cards">
           {planOptions.map((plan) => (
-            <div key={plan.id} className="difficulty-card">
-              <div className="difficulty-icon">{plan.icon}</div>
+            <div key={plan.id} className={`difficulty-card ${plan.className}`}>
               <h3 className="card-title">{plan.title}</h3>
               <p className="card-description">{plan.description}</p>
               <button 
