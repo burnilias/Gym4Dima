@@ -145,8 +145,7 @@ const AdminEditTools = () => {
         element.setAttribute('data-id', `div-${index}`);
       }
     });
-    
-    console.log('Made all content editable');
+     console.log('Made all content editable');
   };
   
   const toggleEditMode = () => {

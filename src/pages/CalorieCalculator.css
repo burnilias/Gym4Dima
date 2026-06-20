@@ -336,16 +336,123 @@ select:focus {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .calorie-calculator-container {
+    padding-top: 70px;
+  }
+
+  .calorie-calculator-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calculator-form-container {
+    padding: 1.5rem;
+  }
+
   form {
     grid-template-columns: 1fr;
   }
-  
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  input[type="number"],
+  select {
+    font-size: 0.9rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .calculate-button {
+    font-size: 1.2rem;
+    padding: 0.7rem;
+    width: 100%;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .result-header h2 {
+    font-size: 1.2rem;
+  }
+
   .calorie-result-row {
     flex-direction: column;
   }
-  
+
   .calorie-label, .calorie-value {
     padding: 1rem;
+  }
+
+  .calorie-number {
+    font-size: 1.5rem;
+  }
+
+  .meal-suggestion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .meal-nutrition {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .calorie-calculator-content {
+    padding: 1rem 0.5rem;
+  }
+
+  .calculator-form-container {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .calculate-button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  .result-section,
+  .meal-suggestion-section {
+    margin-top: 1rem;
+  }
+
+  .result-header,
+  .meal-suggestion-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .result-description,
+  .result-warning,
+  .meal-card {
+    padding: 1rem;
+  }
+
+  .meal-nutrition {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 

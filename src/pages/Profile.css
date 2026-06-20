@@ -304,3 +304,88 @@
 .cancel-button:hover {
   background-color: #444;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .profile-page-container {
+    padding-top: 70px;
+  }
+
+  .profile-page-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-form-container {
+    padding: 1.5rem;
+  }
+
+  .profile-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .avatar-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .update-profile-button {
+    font-size: 0.9rem;
+  }
+
+  .delete-account-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .delete-account-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page-content {
+    padding: 1rem 0.5rem;
+  }
+
+  .profile-form-container {
+    padding: 1rem;
+  }
+
+  .profile-title {
+    font-size: 1.3rem;
+  }
+
+  .avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .update-profile-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .delete-account-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .confirm-delete-button,
+  .cancel-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+}

@@ -160,32 +160,110 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .coach-page-title {
-    font-size: 1.8rem; /* Adjusted for smaller screens */
+  .coach-page-container {
+    padding-top: 70px;
   }
+
+  .coach-page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .coach-page-content {
+    padding: 1.5rem 1rem;
+  }
+
   .coaches-grid {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .coach-page-content {
-    padding: 2rem;
+
+  .coach-card-header,
+  .coach-card-footer {
+    height: 30px;
   }
+
+  .coach-image,
+  .coach-image-placeholder {
+    height: 180px;
+  }
+
+  .coach-info {
+    padding: 1.2rem;
+  }
+
+  .coach-name {
+    font-size: 1.3rem;
+  }
+
+  .coach-specialization {
+    font-size: 0.85rem;
+  }
+
   .coach-whatsapp-button,
   .coach-bio-button {
     padding: 0.7rem 1.2rem;
     font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .loading-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
   }
 }
 
 @media (max-width: 480px) {
+  .coach-page-content {
+    padding: 1rem 0.5rem;
+  }
+
   .coach-page-title {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
+
   .coach-info {
     padding: 1rem;
   }
+
   .coach-name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .coach-specialization {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .coach-card-header,
+  .coach-card-footer {
+    height: 25px;
+  }
+
+  .coach-image,
+  .coach-image-placeholder {
+    height: 150px;
+  }
+
+  .coach-whatsapp-button,
+  .coach-bio-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .window-icon {
+    font-size: 0.6rem;
+  }
+
+  .arrow-icon {
+    font-size: 0.8rem;
   }
 }
 

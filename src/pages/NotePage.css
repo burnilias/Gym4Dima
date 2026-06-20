@@ -169,11 +169,110 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .note-page-main-title {
-    font-size: 2.2rem;
+  .note-page-container {
+    padding-top: 70px;
   }
+
+  .note-page-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .note-page-main-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .note-page-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
   .create-note-section h2,
   .your-notes-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .note-form {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .note-title-input,
+  .note-content-textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .note-content-textarea {
+    min-height: 120px;
+  }
+
+  .save-note-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .note-item {
+    padding: 1rem;
+  }
+
+  .note-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .note-item p {
+    font-size: 0.9rem;
+  }
+
+  .note-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .edit-note-button,
+  .delete-note-button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .note-page-content {
+    padding: 1rem 0.5rem;
+  }
+
+  .note-page-main-title {
     font-size: 1.5rem;
+  }
+
+  .note-page-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .create-note-section h2,
+  .your-notes-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .note-title-input,
+  .note-content-textarea {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .save-note-button {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .note-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .note-item p {
+    font-size: 0.85rem;
   }
 }

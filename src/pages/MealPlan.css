@@ -120,16 +120,26 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .meal-plan-container {
+    padding-top: 70px;
+  }
+
   .meal-plan-content {
     padding: 1rem;
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
 
   .meal-plan-step {
     padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .meal-plan-step h2 {
+    font-size: 1.3rem;
   }
 
   .input-container {
@@ -139,6 +149,8 @@
 
   .input-container input {
     width: 100%;
+    max-width: none;
+    font-size: 0.9rem;
   }
 
   .input-suffix {
@@ -149,7 +161,60 @@
   }
 
   .input-hint {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .next-button, .back-button, .generate-button, .restart-button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .goal-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .goal-option {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .meal-plan-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .meal-plan-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .back-button {
+    margin-right: 0;
+  }
+
+  .meals-container {
+    grid-template-columns: 1fr;
+  }
+
+  .switch {
+    width: 60px;
+    height: 30px;
+  }
+
+  .slider:before {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
   }
 }
 
@@ -159,7 +224,7 @@
   }
 
   .page-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .meal-plan-step {
@@ -167,11 +232,61 @@
   }
 
   .input-container input {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 0.6rem;
   }
 
   .input-hint {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .next-button, .back-button, .generate-button, .restart-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .goal-option {
+    padding: 1rem;
+  }
+
+  .goal-option h3 {
+    font-size: 1rem;
+  }
+
+  .goal-option p {
+    font-size: 0.8rem;
+  }
+
+  .meal-plan-result {
+    padding: 1rem;
+  }
+
+  .meal-plan-summary {
+    padding: 1rem;
+  }
+
+  .summary-value {
+    font-size: 1rem;
+  }
+
+  .meal-card {
+    padding: 1rem;
+  }
+
+  .meal-header h3 {
+    font-size: 1rem;
+  }
+
+  .meal-calories {
+    font-size: 0.8rem;
+  }
+
+  .ingredients-list {
+    padding: 0.8rem;
+  }
+
+  .ingredients-list h5 {
+    font-size: 0.9rem;
   }
 }
 
